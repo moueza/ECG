@@ -3,6 +3,22 @@ clf
 t=linspace(0,1,11)
 R=1
 
+
+
+C={{255,255,0},{255,255,11};
+{255,255,85},{12,255,11}};
+
+//~map  ... find
+function [MATRIXX]=indices(dimI,dimJ)
+    for j=1:dimJ
+        for i=1:dimI
+           formula=i*3*j
+           MATRIXX(i,j)=formula;    
+        end
+    end
+endfunction
+//indices(2,3)(2,3) ... 18
+
 tuplesCycleSTANDARDALPHAUNITEDx=[[0 0];[0.1 0];[.2 0.1];[.3 0];[0.4 -.1];[0.6 1];[0.7 -.9];[0.8 0];[0.9 0];[1 .2];[1.1 0];[1.2 0]];//[percent0To1 z]
 //plot2d(tuplesCycleSTANDARDALPHAUNITEDx(:,1),tuplesCycleSTANDARDALPHAUNITEDx(:,2))
 
@@ -55,9 +71,10 @@ curve2shadow2X.mark_foreground = color("grey");
 
 
 function [MATRIXofGREY]=greying(MATRIXofRGBs )
+    dimMATRIXofRGBs=size(MATRIXofRGBs)
     for j=1:dimMATRIXofRGBs(2)
         for i=1:dimMATRIXofRGBs(1)
-            greyLevel=MATRIXofRGBs(i,j)(1)
+            greyLevel=MATRIXofRGBs(i,j)(1)*MATRIXofRGBs(i,j)(2)*MATRIXofRGBs(i,j)(3)//tridimensionnal P(1,1,1)=P(1,1)(1)
             MATRIXofGREY(i,j)=greyLevel
         end
     end
@@ -70,10 +87,18 @@ N=[n,n; n,n];//2)KO : merges vectors
 o=[255,255,0];
 O(1,1)=o;
 p=[255,255,0];
-P(1,1,1:3)=p; //3) OK ++++ +++++++
-//greying(M ) ... []
+P=[];
+P(1,1,1:3)=p; //3) OK ++++ +++++++ (another workaroud = cells {} but no arithmetic possible)
+p=[255,255,11];
+P(1,2,1:3)=p;
+p=[255,255,85];
+P(2,1,1:3)=p;
+p=[12,255,11];
+P(2,2,1:3)=p;
+//greying(P) ... []
 
-//pix (vector of height) to vector of dots 
+
+//pix (vector of heights) to vector of dots 
 function [vM]=modelization(vecH)
     for ii=1:dimMATRIXofRGBs(1)
         vM(ii)=ii+i*vecH(ii)
