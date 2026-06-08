@@ -69,6 +69,8 @@ n=[255,255,0];
 N=[n,n; n,n];//2)KO : merges vectors
 o=[255,255,0];
 O(1,1)=o;
+p=[255,255,0];
+P(1,1,1:3)=p; //3) OK ++++ +++++++
 //greying(M ) ... []
 
 //pix (vector of height) to vector of dots 
