@@ -5,15 +5,37 @@ R=1
 
 
 
-C={{255,255,0},{255,255,11};
-{255,255,85},{12,255,11}};
+l={{255,255,0},{255,255,11};
+{255,255,85},{12,255,14}};
+//or by Point obj OOP
+function [M3D]=vectorization(Cells)
+    [dimI,dimJ]=size(Cells)
+    for j=1:dimJ
+        for i=1:dimI
+            vector=Cells{i,j};//vector(1)=Cells(i,j)(1);
+            M3D(i,j,1:3)=vector; //tridimensional
+        end
+    end
+endfunction
+//vectorization(l)(2,2,3) ...14  (l{1}  l{1,1} )
+
+function printCells(Cells)
+     [dimI,dimJ]=size(Cells)
+        for i=1:dimI
+               for j=1:dimJ
+disp(Cells{i,j})
+        end
+    end
+endfunction
+// printCells(l)
 
 //~map  ... find
+//can we enter a function as param ?
 function [MATRIXX]=indices(dimI,dimJ)
     for j=1:dimJ
         for i=1:dimI
-           formula=i*3*j
-           MATRIXX(i,j)=formula;    
+            formula=i*3*j
+            MATRIXX(i,j)=formula;    
         end
     end
 endfunction
@@ -25,7 +47,7 @@ tuplesCycleSTANDARDALPHAUNITEDx=[[0 0];[0.1 0];[.2 0.1];[.3 0];[0.4 -.1];[0.6 1]
 divisor=max(tuplesCycleSTANDARDALPHAUNITEDx(:,1))
 
 tupleCycleSTANDARDALPHAUNITEDu=tuplesCycleSTANDARDALPHAUNITEDx(:,1)/divisor
-disp(tupleCycleSTANDARDALPHAUNITED)
+disp(tupleCycleSTANDARDALPHAUNITEDu)
 //plot2d(tupleCycleSTANDARDALPHAUNITEDu,tuplesCycleSTANDARDALPHAUNITEDx(:,2))
 
 
@@ -85,7 +107,7 @@ M=[[255,255,0],[255,255,11];
 n=[255,255,0];
 N=[n,n; n,n];//2)KO : merges vectors
 o=[255,255,0];
-O(1,1)=o;
+O(1,1,1:3)=o;
 p=[255,255,0];
 P=[];
 P(1,1,1:3)=p; //3) OK ++++ +++++++ (another workaroud = cells {} but no arithmetic possible)
@@ -98,20 +120,24 @@ P(2,2,1:3)=p;
 //greying(P) ... []
 
 
-//pix (vector of heights) to vector of dots 
-function [vM]=modelization(vecH)
-    for ii=1:dimMATRIXofRGBs(1)
-        vM(ii)=ii+i*vecH(ii)
+//pixels (vector of heights) to vector of Points=dots(x,y)
+function [vectorM]=modelization(vectorH)
+    for ii=1:size(vectorH)(2)
+        vectorM(ii)=ii+%i*vectorH(ii)
     end
 endfunction
-vecH=[2 3 8 2 1]
-//vM=[(1,2),(2,3),(3,8),(4,2),(5,1) )]
+vectorH=[2 3 8 2 1]
+//modelization(vectorH)(3) ..(3,8)     ... vM=[(1,2),(2,3),(3,8),(4,2),(5,1) )]
 
-function averaging()
+
+//https://en.wikipedia.org/wiki/Signal-averaged_electrocardiogram?utm_source=chatgpt.com
+//vectorShortOfPoints : short <- unique cycle
+//vectorLongOfPoints : long <- multiple cycles
+function [vectorShortOfPoints]=averaging(vectorLongOfPoints)
 endfunction
 
 
-function param3d_cycleUnitaire(t0To1,z)
+function param3d_unityCycle(t0To1,z)
 
 endfunction
 //param3d(x, y, z)
