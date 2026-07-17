@@ -4,3 +4,4 @@
 //overlap width = n pix
 
 //overlap width = dynamic mutiple = mutiple pix but varying if one page is inclined with another ... diagonal band 
+////vertical band

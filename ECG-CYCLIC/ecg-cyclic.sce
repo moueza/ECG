@@ -17,13 +17,13 @@ function [M3D]=vectorization(Cells)
         end
     end
 endfunction
-//vectorization(l)(2,2,3) ...14  (l{1}  l{1,1} )
+//: vectorization(l)(2,2,3) ...14  (l{1}  l{1,1} )
 
 function printCells(Cells)
-     [dimI,dimJ]=size(Cells)
-        for i=1:dimI
-               for j=1:dimJ
-disp(Cells{i,j})
+    [dimI,dimJ]=size(Cells)
+    for i=1:dimI
+        for j=1:dimJ
+            disp(Cells{i,j})
         end
     end
 endfunction
@@ -40,6 +40,8 @@ function [MATRIXX]=indices(dimI,dimJ)
     end
 endfunction
 //indices(2,3)(2,3) ... 18
+
+
 
 tuplesCycleSTANDARDALPHAUNITEDx=[[0 0];[0.1 0];[.2 0.1];[.3 0];[0.4 -.1];[0.6 1];[0.7 -.9];[0.8 0];[0.9 0];[1 .2];[1.1 0];[1.2 0]];//[percent0To1 z]
 //plot2d(tuplesCycleSTANDARDALPHAUNITEDx(:,1),tuplesCycleSTANDARDALPHAUNITEDx(:,2))
@@ -148,4 +150,47 @@ endfunction
 function oneDotPerColumn(MATRIXofECGgreylevels)
 
 endfunction
+colFromBottom1=[1 2  3 2 1 0]
+colFromBottom2=[1 1  2 3 2 1]
+MATRIXofECGgreylevels=[colFromBottom1;colFromBottom2]; MATRIXofECGgreylevels='MATRIXofECGgreylevels;
+//swap
 
+
+
+function [MATRIXX]=indicesLambda(dimI,dimJ, functionLambda)
+    for j=1:dimJ
+        for i=1:dimI
+            functionLambda=i*3*j
+            MATRIXX(i,j)=formula;    
+        end
+    end
+endfunction
+
+
+//swap x = i=I axis : row6 ->row1...
+//horizontal symetry
+function [Swaped]=swaperIrows(M)
+ [dimI,dimJ]=size(M)
+ mid_i=dimI/2;
+ lambda_i ->lambda_i
+endfunction
+
+
+function [Matrixx2D]=cellTOmat2D(Cellss)
+    [dimI,dimJ]=size(Cellss)
+    disp(dimI)
+    disp(dimJ) 
+    for j=1:dimJ
+        for i=1:dimI
+            Matrixx2D(i,j)=1;
+            mem=Cellss{i,j};
+            nonamem=999*mem
+            disp(nonamem);//obj, not values            
+        end
+    end
+endfunction
+Cellss={{1 2 3};{10 20 30};{100 200 300}}; //cell col 3x1 ++++ not 3x3
+//Cellss{1,2} KO
+//Cellss{2,1} OK {10 20 30} ... see as 1 obj, so no operations++++ ++++++++
+// cellTOmat2D(c)(2,1)
+//.. 10
