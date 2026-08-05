@@ -31,18 +31,34 @@ function [Timess]=findRR(timeseriess, threshold)
 
 endfunction
 
-      
-//Complete : for each column, at least a 1
-      //Out : unique 1 per column
-      //Floor = minimize
-function [Timess]=blackAndWhiteFloorPerPixcolumnComplete(Binaries)
 
-endfunction
-Binaries2=[0 0 1]
-          [1 0 0]
-          [1 1 0]
-      
-//Answer  [0 0 1]
-//         0 0 0
-//         1 1 0
-[Timess]=blackAndWhiteFloorPerPixcolumnComplete(Binaries2)
+//Complete : for each column, at least a 1
+//Out : unique 1 per column
+//Floor = minimize
+function [SCREENOFPIX]=blackAndWhiteFloorPerPixcolumnCompleteThick2Thin(BINARIESCREEN)
+    [height,width]=size(BINARIESCREEN)
+    zeros(height,width)
+    for j=1:width
+        //minMet=%F
+        i=height
+        while(i<=height)
+
+            if 	(BINARIESCREEN(i,j)==1) then
+                SCREENOFPIX(i,j)=1
+                i=i-1
+                done
+                done
+            endfunction
+            BINARIESCREEN2=[0 0 1 1]
+            [1 0 0 1]
+            [1 1 0 1]
+
+            //Answer  [0 0 1 0]
+            //         0 0 0 0
+            //         1 1 0 1
+            [SCREENOFPIX]=blackAndWhiteFloorPerPixcolumnCompleteThick2Thin(BINARIESCREEN2)
+            if ((SCREENOFPIX(3,1)==1)&&(SCREENOFPIX(3,3)==0))  then
+                disp("ok")
+            else
+                disp("KO")
+            end
