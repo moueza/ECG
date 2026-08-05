@@ -1,1 +1,39 @@
-tbx_builder_demos(pkg_path);
+//  Le20260805 - Peter MOUEZA
+//
+clc;
+mode(-1);
+lines(0);
+
+function main_builder()
+  version_numbers = getversion("scilab")
+  TOOLBOX_NAME  = "ECG";
+  TOOLBOX_TITLE = "ElectroCardioGram";
+  toolbox_dir   = get_absolute_file_path();
+
+  // Action
+  // ========================================================================
+// 1. Compiler les macros (fonctions .sci) :
+  tbx_builder_macros(toolbox_dir);
+  
+  
+  tbx_builder_src(toolbox_dir);
+  
+  // 3. Compiler la gateway C/C++/Fortran (si présente) :
+  //tbx_builder_gateway(toolbox_dir);
+  
+  tbx_build_loader(toolbox_dir);
+ 
+  //load functions to be able to run help examples
+  ECGlib = lib(toolbox_dir+"macros");
+
+// 2. Compiler l'aide (XML -> JAR) :
+  tbx_builder_help(toolbox_dir);
+  
+  tbx_builder_demos(toolbox_dir);
+
+
+  tbx_build_cleaner(toolbox_dir);
+endfunction
+
+main_builder();
+clear main_builder; // remove main_builder on stack
