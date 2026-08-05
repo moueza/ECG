@@ -7,3 +7,5 @@
 loader.sce
 unloader.sce
 cleaner.sce
+
+macros/manylines-to-one.bin
