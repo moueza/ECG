@@ -29,7 +29,7 @@ function main_builder()
 // 2. Compiler l'aide (XML -> JAR) :
   tbx_builder_help(toolbox_dir);
   
-  tbx_builder_demos(toolbox_dir);
+  //tbx_builder_demos(toolbox_dir); DOES NOT EXIST ... cg loader.sce
 
 
   tbx_build_cleaner(toolbox_dir);
