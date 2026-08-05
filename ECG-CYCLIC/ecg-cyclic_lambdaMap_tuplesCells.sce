@@ -194,3 +194,9 @@ Cellss={{1 2 3};{10 20 30};{100 200 300}}; //cell col 3x1 ++++ not 3x3
 //Cellss{2,1} OK {10 20 30} ... see as 1 obj, so no operations++++ ++++++++
 // cellTOmat2D(c)(2,1)
 //.. 10
+
+function avv=averag(timeseriess)
+endfunction
+
+function devv=standard_deviation(timeseriess)
+endfunction
