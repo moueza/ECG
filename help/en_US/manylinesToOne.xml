@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from manylinesToOne.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="manylinesToOne" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>manylinesToOne</refname>
+    <refpurpose>Courte description explicative de la fonction (une seule ligne).</refpurpose>
+  </refnamediv>
+
+
+<refsection role="arguments">
+   <title>Arguments</title>
+   <variablelist>
+        <varlistentry>
+            <term>MATRIXmultilines :</term>
+            <listitem><para> matrix of a multiline of one unique derivation,multilined because of A4... restriction (type, rôle)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Line0 :</term>
+            <listitem><para> the whole derivation into one unique line vector</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Gets lines, and concatenate one to the other
+   </para>
+   <para>
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+MATRIXmultilinesPRE=[[1 9 10 9 0 0 0 1 9 10 99];[1 9 10 9 0 0 0 1 9 10 7];[1 9 10 9 0 0 0 1 9 10 7];[1 9 10 99 0 0 0 1 9 10 9];[];[]];//MATRIXmultilines=MATRIXmultilinesPRE'; //Hadamard
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!--Begin Entities-->
+<!ENTITY afbdbb04008e80c8287c28dbc658f68b7 SYSTEM "/home/peter/POUB/ECG/help/en_US/manylines-to-one.xml">
+<!ENTITY a87fec57c38caea2d86e3dedc7b3f4789 SYSTEM "/home/peter/POUB/ECG/help/en_US/manylinesToOne.xml">
+<!ENTITY acfc9fd70ae13ea51dd5591eac2dc99c7 SYSTEM "/home/peter/POUB/ECG/help/en_US/names.xml">
+<!--End Entities-->
+]>
+<book version="5.0-subset Scilab" xml:lang="en_US"
+      xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:mml="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info xml:id='mon_module_manual'>
+    <title>mon_module</title>
+  </info>
+
+<part xml:id='section_1ada319bf68b7252af439fd72edbcf28'>
+<title>mon_module</title>
+&afbdbb04008e80c8287c28dbc658f68b7;
+&a87fec57c38caea2d86e3dedc7b3f4789;
+&acfc9fd70ae13ea51dd5591eac2dc99c7;
+</part>
+</book>

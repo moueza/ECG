@@ -1,6 +1,6 @@
 //  Le20260805 - Peter MOUEZA
 //
-clc;
+//clc;
 mode(-1);
 lines(0);
 
