@@ -1,9 +1,9 @@
 //in A4  conventional many lines of ECG to 1 unique line
-function [Line0]=many_to_one(MATRIXmultilines)
+function [Line0]=manyToOne(MATRIXmultilines)
     // Courte description explicative de la fonction (une seule ligne).
 //
 // Calling Sequence
-//   [Line0] = many_to_one(MATRIXmultilines)
+//   [Line0] = manyToOne(MATRIXmultilines)
 //
 // Parameters
 //   MATRIXmultilines : matrix of a multiline of one unique derivation,multilined because of A4... restriction (type, rôle)
@@ -19,8 +19,8 @@ function [Line0]=many_to_one(MATRIXmultilines)
 //:                   1st line        2nd
 
 
-//Line1=many_to_one(MATRIXmultilines)
-//Line1=many_to_one(MATRIXmultilinesPRE)
+//Line1=manyToOne(MATRIXmultilines)
+//Line1=manyToOne(MATRIXmultilinesPRE)
 //
 // See also
 //   autre_fonction
@@ -30,15 +30,15 @@ function [Line0]=many_to_one(MATRIXmultilines)
 //   Peter MOUEZA <moueza.forums@gmail.com>
     clc;
     Line0=[];
-    disp("size(MATRIXmultilines) : ",size(MATRIXmultilines))
-    disp("size(MATRIXmultilines)(1) : ",size(MATRIXmultilines)(1))
+    //disp("size(MATRIXmultilines) : ",size(MATRIXmultilines))
+    //disp("size(MATRIXmultilines)(1) : ",size(MATRIXmultilines)(1))
     for i = 1:size(MATRIXmultilines)(1)
         LineVector=MATRIXmultilines(i,:)
-        disp("LineVector : ",LineVector)
+        //disp("LineVector : ",LineVector)
         Line0=[Line0,LineVector]
-        disp("Line0 : ",Line0)
+        //disp("Line0 : ",Line0)
     end
 endfunction
 
-disp("Line1 : ",Line1)
+//disp("Line1 : ",Line1)
 //MUST Line1(12) ... 1  ;   Line1(13) ... 9
